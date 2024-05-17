@@ -16,6 +16,7 @@ public class FitUser{
     private String userId;
     private String email;
     private String gender;
+    private String password;
     private String realName;
     private int totalDuration;
     private int totalTimeFit;
