@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @TableName("user")
 public class FitUser{
     @TableId
-    private String userId;
+    private int userId;
     private String email;
     private String gender;
     private String password;
