@@ -17,7 +17,7 @@ public class FitUserController {
         return fitUserService.getUser(userId);
     }
     @GetMapping("/user/all")
-    public List<FitUser> GetAllUser(){
+    public List<FitUser> getAllUser(){
         return fitUserService.getAllUser();
     }
     @PostMapping("/user/register")

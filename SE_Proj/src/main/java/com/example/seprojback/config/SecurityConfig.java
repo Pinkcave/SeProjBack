@@ -42,8 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/pics/**").permitAll()
                 // 除上面外的所有请求全部需要鉴权认证
                 /*暂时跳过验证过程*/
-                .anyRequest().authenticated();
-                //.anyRequest().anonymous();
+                //.anyRequest().authenticated();
+                .anyRequest().anonymous();
 
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
