@@ -40,7 +40,8 @@ public class FitUserServiceImpl implements FitUserService {
     @Override
     public ResponseResult modifyUser(FitUser user){
         try{
-            mapper.updateById(user);
+            if(mapper.updateById(user) < 0)
+                return new ResponseResult(200,"User Not Exists");
             return new ResponseResult(200,"Modify Successfully");
         }
         catch(Exception e){
