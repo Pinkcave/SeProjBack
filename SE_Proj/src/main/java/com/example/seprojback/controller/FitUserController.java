@@ -29,7 +29,7 @@ public class FitUserController {
         return fitUserService.modifyUser(user);
     }
     @PostMapping("/user/login")
-    public ResponseResult<Boolean> login(@RequestParam String email,@RequestParam String password){
-        return fitUserService.login(email,password);
+    public ResponseResult<Boolean> login(@RequestBody FitUser user){
+        return fitUserService.login(user);
     }
 }

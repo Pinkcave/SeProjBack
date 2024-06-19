@@ -59,12 +59,14 @@ public class FitUserServiceImpl implements FitUserService {
         }
     }
     @Override
-    public ResponseResult<Boolean> login(String email, String pwd){
+    public ResponseResult<Boolean> login(FitUser user){
         try{
+            String email = user.getEmail();
+            String pwd = user.getPassword();
             LambdaQueryWrapper<FitUser> queryWrapper = new LambdaQueryWrapper<>();
             queryWrapper.eq(FitUser::getEmail,email);
-            FitUser user = mapper.selectOne(queryWrapper);
-            return new ResponseResult<Boolean>(200,user.getPassword().equals(pwd));
+            FitUser realUser = mapper.selectOne(queryWrapper);
+            return new ResponseResult<Boolean>(200,realUser.getPassword().equals(pwd));
         }
         catch (Exception e){
             return new ResponseResult<Boolean>(500,e.getMessage(),false);

@@ -15,5 +15,5 @@ public interface FitUserService {
 
     ResponseResult deleteUser(int userId);
 
-    ResponseResult<Boolean> login(String email,String pwd);
+    ResponseResult<Boolean> login(FitUser user);
 }

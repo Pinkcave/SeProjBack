@@ -1,8 +1,7 @@
 package com.example.seprojback.domain;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.example.seprojback.entity.User;
-import lombok.AllArgsConstructor;
+import com.example.seprojback.entity.FitUser;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -19,11 +18,11 @@ import java.util.stream.Collectors;
 //@AllArgsConstructor
 public class LoginUser implements UserDetails {
 
-    private User user;
+    private FitUser user;
 
     private List<String> permissions;
 
-    public LoginUser(User user, List<String> permissions) {
+    public LoginUser(FitUser user, List<String> permissions) {
         this.user = user;
         this.permissions = permissions;
     }
@@ -47,12 +46,12 @@ public class LoginUser implements UserDetails {
 
     @Override
     public String getPassword() {
-        return user.getPwd();
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return user.getName();
+        return user.getRealName();
     }
 
     @Override
