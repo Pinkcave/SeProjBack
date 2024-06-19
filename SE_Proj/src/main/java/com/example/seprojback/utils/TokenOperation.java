@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TokenOperation {
 
-    public static String getUserIdFromToken() {
+    public static int getUserIdFromToken() {
         UsernamePasswordAuthenticationToken authentication =
                 (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
